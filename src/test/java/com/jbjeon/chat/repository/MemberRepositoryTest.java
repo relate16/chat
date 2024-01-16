@@ -35,9 +35,8 @@ class MemberRepositoryTest {
 
   @Test
   void findByName() {
-    Member member = new Member("username1", "password1",                                           //
-      Gender.M,"920130","010-0000-0000","test@google.com", LocalDateTime.now());        //
-
+    Member member = new Member("username1", "password1",
+      Gender.M,"920130","010-0000-0000","test@google.com", LocalDateTime.now());
     Member saveMember = memberRepository.save(member);
 
     em.flush();                                                                                                         // '쓰기 지연 sql' db에 전송
@@ -48,6 +47,6 @@ class MemberRepositoryTest {
 
     Optional<Member> findMemberOt = memberRepository.findByUsername("username1");                                       // findByUsername() 메서드 검증
     Member findMember = findMemberOt.orElseThrow(() -> new RuntimeException("cant find Member"));                       // :
-    Assertions.assertThat(findMember.getId()).isEqualTo(saveMember.getId());                                            // :
+    Assertions.assertThat(findMember.getId()).isEqualTo(saveMember.getId());                                            // : db의 member.id 와 애플리케이션의 member.id 비교
   }
 }

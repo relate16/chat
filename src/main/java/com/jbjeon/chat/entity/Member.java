@@ -15,26 +15,26 @@ import java.time.LocalDateTime;
 public class Member {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Setter(AccessLevel.NONE)                                   // 해당 필드에는 setter 생성 안함
+  @Setter(AccessLevel.NONE)                                                                                             // 해당 필드는 setter 생성 안함
   private Long id;
 
-  @Column(columnDefinition = "varchar(50) default 'EMPTY'")
+  @Column(columnDefinition = "varchar(50) default 'EMPTY'", nullable = false)
   private String username;
 
-  @Column(columnDefinition = "varchar(255) default 'EMPTY'")
+  @Column(columnDefinition = "varchar(255) default 'EMPTY'", nullable = false)
   private String password;
 
   @Enumerated(EnumType.STRING)
-  @Column(columnDefinition = "char(1) default 'E'")           // E : EMPTY
+  @Column(columnDefinition = "char(1) default 'E'", nullable = false)                                                                     // 'E' : EMPTY
   private Gender gender;
 
-  @Column(columnDefinition = "char(6) default '000000'")
+  @Column(columnDefinition = "char(6) default '000000'", nullable = false)
   private String birthday;
 
-  @Column(columnDefinition = "varchar(20) default 'EMPTY'")
+  @Column(columnDefinition = "varchar(20) default 'EMPTY'", nullable = false)
   private String phoneNumber;
 
-  @Column(columnDefinition = "varchar(255) default 'EMPTY'")
+  @Column(columnDefinition = "varchar(255) default 'EMPTY'", nullable = false)
   private String email;
 
   private LocalDateTime createdDate;
