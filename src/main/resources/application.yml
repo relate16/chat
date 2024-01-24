@@ -15,4 +15,5 @@ spring:
 
 logging:
   level:
-    org.hibernate.SQL: debug
+    org.hibernate.SQL: debug                                                                                            # 실행 sql 문 log 로 출력
+#    org.hibernate.orm.jdbc.bind: trace                                                                                  # sql 의 파라미터 값을 추적(hibernate 6), 운영 단계에서 사용
