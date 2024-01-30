@@ -5,6 +5,9 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### querydsl 의 QFile 경로 ###
+src/main/generated/
+
 ### STS ###
 .apt_generated
 .classpath

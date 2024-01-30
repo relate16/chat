@@ -24,3 +24,8 @@ https://nodejs.org 에서 노드를 설치합니다.
   npm run serve
 명령어를 실행합니다.
 ```
+### 기타. querydsl 사용 방법 
+```
+Q파일 생성 :
+Tasks>build 혹은 Tasks>clean>build 혹은 ChatApplication.class 실행
+```
