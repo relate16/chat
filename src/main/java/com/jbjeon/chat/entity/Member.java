@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)                                                                      // AccessLevel.PROTECTED - 기본 생성자 개발자가 사용 안하는 것을 권장
 public class Member {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Setter(AccessLevel.NONE)                                                                                             // 해당 필드는 setter 생성 안함
+  @Setter(AccessLevel.NONE)                                                                                             // AccessLevel.NONE - 해당 필드는 setter 생성 안함
   private Long id;
 
   @Column(columnDefinition = "varchar(50) default 'EMPTY'", nullable = false)
@@ -25,7 +25,7 @@ public class Member {
   private String password;
 
   @Enumerated(EnumType.STRING)
-  @Column(columnDefinition = "char(1) default 'E'", nullable = false)                                                                     // 'E' : EMPTY
+  @Column(columnDefinition = "char(1) default 'E'", nullable = false)                                                   // 'E' - EMPTY
   private Gender gender;
 
   @Column(columnDefinition = "char(6) default '000000'", nullable = false)
@@ -37,7 +37,8 @@ public class Member {
   @Column(columnDefinition = "varchar(255) default 'EMPTY'", nullable = false)
   private String email;
 
-  private LocalDateTime createdDate;
+  @Column(nullable = false)
+  private LocalDateTime createdDate = LocalDateTime.now();                                                              // createdDate - 생성 날짜
 
   public Member(String username, String password, Gender gender, String birthday,
                 String phoneNumber, String email, LocalDateTime createdDate) {
