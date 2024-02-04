@@ -10,14 +10,6 @@ class ChatApplicationTests {
 
 	@Test
 	void contextLoads() {
-/*		Member member = new Member();
-
-		member.setGender(Gender.F);
-
-		String description = Gender.F.getDescription();
-
-		System.out.println("member = " + member.getGender());
-		System.out.println("description = " + description);*/
 	}
 
 }
